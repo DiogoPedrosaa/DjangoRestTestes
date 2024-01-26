@@ -1,0 +1,35 @@
+body {
+    margin: 0; /* Remova as margens padrão do body */
+    padding: 0; /* Remova o preenchimento padrão do body */
+    height: 100vh; /* Defina a altura do body como 100% da altura da janela de visualização */
+    background-image: url('/static/img/emberscaledragon_4k.jpg'); /* Caminho para a imagem de wallpaper */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o corpo */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+}
+
+h1 {
+    color: white;
+    text-align: center; /* Centraliza o título */
+}
+
+table {
+    margin: 20px auto; /* Centraliza a tabela com uma margem superior de 20px */
+    border-collapse: collapse; /* Remove espaçamento entre as células da tabela */
+    width: 80%; /* Define a largura da tabela */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid white; /* Adiciona uma borda branca para melhor contraste */
+    color: white; /* Cor do texto */
+}
+
+thead {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o cabeçalho da tabela */
+}
+
+tbody {
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para as linhas da tabela */
+}
