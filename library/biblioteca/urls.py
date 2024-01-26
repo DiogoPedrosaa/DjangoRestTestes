@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
-from books.api import viewsets as booksviewset
 from character.api import viewsets as charactersviewset
 from rest_framework import routers, permissions
 from character import views
@@ -9,7 +8,7 @@ from drf_yasg import openapi
 
 route = routers.DefaultRouter()
 
-route.register(r'books', booksviewset.BooksViewSet, basename="Books")
+
 route.register(r'characters', charactersviewset.CharacterViewSet, basename="Characters")
 
 
