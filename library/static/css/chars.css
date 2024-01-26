@@ -11,6 +11,10 @@ body {
 h1 {
     color: white;
     text-align: center; /* Centraliza o título */
+    margin-bottom: 125px;
+    font-size: 36px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: bold; /* Deixa o texto em negrito para maior destaque */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra ao texto para destacar ainda mais */
 }
 
 table {
@@ -32,4 +36,58 @@ thead {
 
 tbody {
     background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para as linhas da tabela */
+}
+
+.build-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sort-icon {
+    cursor: pointer; /* Adiciona o estilo de cursor de clique */
+}
+
+
+
+
+/* Estilo para a label */
+
+/* Estilo para o elemento select */
+#filtroClasse {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white; /* Fundo branco */
+    color: #333; /* Cor do texto dentro do select */
+    margin: 0 auto; /* Centraliza o select horizontalmente */
+    display: block; /* Ocupa a largura total disponível */
+}
+
+/* Estilo para as opções dentro do select */
+#filtroClasse option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Estilo quando o select está focado */
+#filtroClasse:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Centraliza a caixa "Filtrar Classe" na página */
+#filtroClasseContainer {
+    text-align: center;
+    margin-top: 20px; /* Adapte a margem superior conforme necessário */
+    margin-right: 1390px;
 }

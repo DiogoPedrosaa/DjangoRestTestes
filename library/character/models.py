@@ -9,7 +9,5 @@ class Character(models.Model):
    char_effect_level = models.IntegerField()
    char_class = models.CharField(max_length= 50)
    char_guild = models.CharField(max_length= 50)
+   char_build = models.URLField(blank=True, null=True)
    
-   
-    
-

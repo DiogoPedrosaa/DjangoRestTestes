@@ -2,7 +2,7 @@ $(document).ready(function() {
     var isSortedAsc = false;
 
     // Adicione um botão de ordenação ao lado das colunas desejadas
-    $('.sortable').append('<span class="sort-icon">▼</span>');
+    $('.sortable').append('<span class="sort-icon">&#x25B2;</span>');
 
     $('.sortable').on('click', function() {
         var index = $(this).index();
@@ -26,7 +26,25 @@ $(document).ready(function() {
         isSortedAsc = !isSortedAsc;
 
         // Atualiza a aparência do ícone de ordenação
-        $('.sortable .sort-icon').text('▼');
-        $(this).find('.sort-icon').text(isSortedAsc ? '▲' : '▼');
+        $('.sortable .sort-icon').html(isSortedAsc ? '&#x25BC;' : '&#x25B2;');
     });
+});
+
+$(document).ready(function() {
+    $('#filtroClasse').on('change', function() {
+        var selectedClass = $(this).val();
+        filterTableByClass(selectedClass);
+    });
+
+    function filterTableByClass(selectedClass) {
+        // Esconda todas as linhas da tabela
+        $('tbody tr').hide();
+
+        // Mostre apenas as linhas que correspondem à classe selecionada
+        if (selectedClass === "") {
+            $('tbody tr').show();
+        } else {
+            $('tbody tr td:nth-child(4)').filter(':contains("' + selectedClass + '")').parent().show();
+        }
+    }
 });
