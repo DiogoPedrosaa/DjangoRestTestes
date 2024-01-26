@@ -15,7 +15,7 @@
     <div id="filtroClasseContainer">
         <select id="filtroClasse">
             <option value="">Filtrar Classes</option>
-            <option value="Black Knight">Black Knight</option>
+            <option value="Black Guard">Black Guard</option>
             <option value="Arcanist">Arcanist</option>
             <option value="Fighter">Fighter</option>
             <option value="Soulbow">Soulbow</option>
@@ -32,7 +32,6 @@
                 <th class="sortable">Nível Legacy</th>
                 <th class="sortable">Nível Efetivo</th>
                 <th>Classe</th>
-                <th>Guilda</th>
                 <th>Build</th>
             </tr>
         </thead>
@@ -44,7 +43,6 @@
                     <td>{{ character.char_legacy_level }}</td>
                     <td>{{ character.char_effect_level }}</td>
                     <td>{{ character.char_class }}</td>
-                    <td>{{ character.char_guild }}</td>
                     <td><a href="{{ character.char_build }}" class="build-button" target="_blank">Ver Build</a></td>
                 </tr>
             {% endfor %}
