@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/chars.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="{% static 'js/filtrar_char.js' %}"></script>
+    <title>Lista de Personagens</title>
+</head>
+<body>
+    <h1>Lista de Personagens</h1>
+
+    <div id="filtroClasseContainer">
+        <select id="filtroClasse">
+            <option value="">Filtrar Classes</option>
+            <option value="Black Guard">Black Guard</option>
+            <option value="Arcanist">Arcanist</option>
+            <option value="Fighter">Fighter</option>
+            <option value="Soulbow">Soulbow</option>
+            <option value="Bardo">Bardo</option>
+        </select>
+    </div>
+
+
+    <table border="1">
+        <thead>
+            <tr>
+              
+                <th>Nickname</th>
+                <th class="sortable">Nível Legacy</th>
+                <th class="sortable">Nível Efetivo</th>
+                <th>Classe</th>
+                <th>Build</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for character in characters %}
+                <tr>
+                   
+                    <td>{{ character.char_nick }}</td>
+                    <td>{{ character.char_legacy_level }}</td>
+                    <td>{{ character.char_effect_level }}</td>
+                    <td>{{ character.char_class }}</td>
+                    <td><a href="{{ character.char_build }}" class="build-button" target="_blank">Ver Build</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

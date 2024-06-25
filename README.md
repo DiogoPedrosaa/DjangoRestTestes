@@ -1,0 +1,1 @@
+Começou com um estudo de API REST no Django utilizando uma api de Biblioteca e Livros, mas fui mexendo no estagio e virou um Filtrador de Personagens de uma guild de um jogo que eu costumo jogar com meus amigos.
