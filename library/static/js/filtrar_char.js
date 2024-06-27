@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var isSortedAsc = false;
 
-
     $('.sortable').append('<span class="sort-icon">&#x25B2;</span>');
 
     $('.sortable').on('click', function() {
@@ -12,7 +11,6 @@ $(document).ready(function() {
             var aValue = $(a).children('td').eq(index).text();
             var bValue = $(b).children('td').eq(index).text();
 
-        
             aValue = parseInt(aValue) || 0;
             bValue = parseInt(bValue) || 0;
 
@@ -25,26 +23,44 @@ $(document).ready(function() {
 
         isSortedAsc = !isSortedAsc;
 
-    
         $('.sortable .sort-icon').html(isSortedAsc ? '&#x25BC;' : '&#x25B2;');
     });
-});
 
-$(document).ready(function() {
     $('#filtroClasse').on('change', function() {
         var selectedClass = $(this).val();
-        filterTableByClass(selectedClass);
+        fetchCharactersByClass(selectedClass);
     });
 
-    function filterTableByClass(selectedClass) {
-       
-        $('tbody tr').hide();
+    function fetchCharactersByClass(charClass) {
+        var url = '/apis/characters/search-by-class/?class=' + charClass;
 
-  
-        if (selectedClass === "") {
-            $('tbody tr').show();
-        } else {
-            $('tbody tr td:nth-child(4)').filter(':contains("' + selectedClass + '")').parent().show();
-        }
+        $.ajax({
+            url: url,
+            method: 'GET',
+            success: function(data) {
+                updateTable(data);
+            },
+            error: function(error) {
+                console.error('Error fetching characters:', error);
+            }
+        });
+    }
+
+    function updateTable(characters) {
+        var tbody = $('tbody');
+        tbody.empty();
+
+        characters.forEach(function(character) {
+            var row = `
+                <tr>
+                    <td>${character.char_nick}</td>
+                    <td>${character.char_legacy_level}</td>
+                    <td>${character.char_effect_level}</td>
+                    <td>${character.char_class}</td>
+                    <td><a href="${character.char_build}" class="build-button" target="_blank">Ver Build</a></td>
+                </tr>
+            `;
+            tbody.append(row);
+        });
     }
 });

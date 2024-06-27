@@ -17,11 +17,9 @@
     <div id="filtroClasseContainer">
         <select id="filtroClasse">
             <option value="">Filtrar Classes</option>
-            <option value="Black Guard">Black Guard</option>
-            <option value="Arcanist">Arcanist</option>
-            <option value="Fighter">Fighter</option>
-            <option value="Soulbow">Soulbow</option>
-            <option value="Bardo">Bardo</option>
+            {% for char_class in classes %}
+                <option value="{{ char_class }}">{{ char_class }}</option>
+            {% endfor %}
         </select>
     </div>
 
